@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  snyk: snyk/snyk@1.1.0
 
 workflows:
   version: 2
@@ -40,3 +42,4 @@ jobs:
           prefix: coverage
       - store_test_results:
           path: test-results.xml
+      - snyk/scan
